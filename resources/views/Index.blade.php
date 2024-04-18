@@ -3,6 +3,7 @@
 
     @section('content-1')
     <center>  <h1>Liste Categorie</h1> </center>
+    <br>
     <table class="table table-dark table-striped">
         <tr>
             <th>ID</th>
@@ -19,6 +20,7 @@
 
     @section('content-2')
     <center>  <h1>Liste Ingredient</h1> </center>
+    <br>
     <table class="table table-dark table-striped">
         <tr>
             <th>Ingredients</th>
