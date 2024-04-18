@@ -1,3 +1,10 @@
+<style>
+    body
+    {
+        background-image: url('{{asset('image/back.webp')}}');
+
+    }
+</style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="#">SAKAFO</a>
