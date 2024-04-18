@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\IngredientRequest;
 use App\Models\Categorie;
 use App\Models\Ingredient;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
 {
-    public function ingredientPost(Request $request)  {
+    public function ingredientPost(IngredientRequest $request)  {
 
         $Ingredient = new Ingredient();
         $categorie = Categorie::all();

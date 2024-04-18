@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title',"NOUVEAU-INGREDIENT")
+@section('title',"New Categorie")
 
 
 
@@ -76,7 +76,8 @@
                             </select>
                             <div class="select-dropdown"></div>
                         </div>
-                    </div> --}}
+                     --}}
+                    </div>
                     <div class="p-t-15">
                         <button class="btn btn--radius-2 btn--blue col-12" type="submit">Valider</button>
                     </div>
