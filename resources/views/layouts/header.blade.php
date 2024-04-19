@@ -25,19 +25,21 @@
                 <li class="nav-item ">
                     <a class="nav-link {{ Request::path() == '#' ? 'active' : '' }}" href="#">New Recette</a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link {{ Request::path() == 'listRecette' ? 'active' : '' }}" href="{{route('listRecette')}}">List Recette</a>
+                </li>
             </ul>
         </div>
 
     </div>
 </nav>
-<script>
-    
-</script>
-    {{-- @if ($errors->any())
+@if (Request::path() !== 'categorieForm') 
+    @if ($errors->any())
         @foreach ($errors->all() as $error )
-        <div class="alert alert-danger alert-dismissible fade show" role="alert" style="color: red">
-            <strong>ERROR!</strong> {{$error}}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-          </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" style="color: red">
+                <strong>ERROR!</strong> {{$error}}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
         @endforeach
-    @endif --}}
+    @endif
+@endif

@@ -3,6 +3,8 @@
 use App\Http\Controllers\Categorie_IngredientController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\PlatController;
+use App\Models\Plat;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,4 +25,5 @@ Route::get('categorieForm',function ()  {
 })->name('categorieForm');
 Route::post('/',[CategorieController::class,'categoriePost'])->name('categoriePost');
 Route::post('ingredientPost',[FormController::class,'ingredientPost'])->name('ingredientPost');
+Route::get('listRecette',[PlatController::class,'getPlat'])->name('listRecette');
 

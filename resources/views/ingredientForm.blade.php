@@ -15,13 +15,13 @@
                         <div class="col-6">
                             <div class="input-group">
                                 <label class="label">Ingredient</label>
+                                
                                 <input class="input--style-4 col-12 " type="text" name="nom">
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="input-group">
                                 <label class="label">Categorie</label>
-                                <br>
                                 <select name="categorie" class="input--style-4 col-12 form-select" style="margin-left: -50px;margin-top:30px">
                                     <option selected disabled>Choisir une categorie</option>
                                     @foreach ($categorie as $categories)

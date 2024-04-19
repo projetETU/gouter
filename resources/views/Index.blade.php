@@ -2,9 +2,11 @@
 @section('title','HOME-RECETTE')
 
     @section('content-1')
-    <center>  <h1>Liste Categorie</h1> </center>
+        <div class="card card-4">
+            
+    <center>  <h1 class="title">Liste Categorie</h1> </center>
     <br>
-    <table class="table table-dark table-striped">
+    <table class="table table-success table-striped">
         <tr>
             <th>ID</th>
             <th>Categorie</th>
@@ -16,14 +18,19 @@
             </tr>
             @endforeach
     </table>
+</div>
     @endsection
 
     @section('content-2')
+    <div class="card card-4">
+
     <center>  <h1>Liste Ingredient</h1> </center>
     <br>
-    <table class="table table-dark table-striped">
+    <table class="table table-success table-striped">
         <tr>
             <th>Ingredients</th>
+            <th>Prix</th>
+            <th>Calories 100g</th>
             <th>Categories</th>
         </tr>
 
@@ -37,4 +44,5 @@
             </tr>
             @endforeach
     </table>
+    </div>
     @endsection
