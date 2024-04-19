@@ -16,11 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[Categorie_IngredientController::class,'getCategorie_Ingredient']);
-Route::get('ingredientForm',[CategorieController::class,'getCategorie']);
+Route::get('/',[Categorie_IngredientController::class,'getCategorie_Ingredient'])->name('home');
+Route::get('ingredientForm',[CategorieController::class,'getCategorie'])->name('ingredientForm');
 Route::get('categorieForm',function ()  {
     return view('categorieForm');
-});
+})->name('categorieForm');
 Route::post('/',[CategorieController::class,'categoriePost'])->name('categoriePost');
 Route::post('ingredientPost',[FormController::class,'ingredientPost'])->name('ingredientPost');
 
