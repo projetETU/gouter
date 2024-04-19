@@ -30,6 +30,9 @@
 
     </div>
 </nav>
+<script>
+    
+</script>
     {{-- @if ($errors->any())
         @foreach ($errors->all() as $error )
         <div class="alert alert-danger alert-dismissible fade show" role="alert" style="color: red">

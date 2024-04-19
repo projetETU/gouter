@@ -17,6 +17,7 @@
 <body>
     <div class="m-5 text-center">
         <div class="row align-items-start">
+            <div>@yield('main')</div>
             <div class="col">@yield('content-1')</div>
             <div class="col">@yield('content-2')</div>
     <</div>

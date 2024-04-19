@@ -3,7 +3,7 @@
 
 
 
-    @section('content-1')
+    @section('main')
 
     <div class="wrapper wrapper--w680 mt-5 ">
         <div class="card card-4">
