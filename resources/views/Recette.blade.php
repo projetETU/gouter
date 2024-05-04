@@ -2,7 +2,7 @@
 @section('title','Recette Liste')
 
     @section('main')
-        <div class="card card-4">
+        <div class="card card-4 m-6">
             
     <center>  <h1 class="title">Liste Categorie</h1> </center>
     <br>

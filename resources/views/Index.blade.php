@@ -3,13 +3,18 @@
 
     @section('content-1')
         <div class="card card-4">
-            
+
     <center>  <h1 class="title">Liste Categorie</h1> </center>
     <br>
     <table class="table table-success table-striped">
         <tr>
             <th>ID</th>
             <th>Categorie</th>
+
+            <form action="{{route('export')}}" method="POST" >
+                @csrf
+                <button class="btn btn-primary" name="btn" value="Categorie">Export CSV</button>
+            </form>
         </tr>
             @foreach ($categorie as $categories)
             <tr>
@@ -33,7 +38,12 @@
             <th>Calories 100g</th>
             <th>Categories</th>
         </tr>
-
+        
+        <br>
+        <form action="{{route('export')}}" method="POST" >
+            @csrf
+            <button class="btn btn-primary" name="btn" value="Ingredient">Export CSV</button>
+        </form>
         @foreach ($ingredient as $ingredients)
             <tr>
                 <td>{{ $ingredients -> nom }}</td>
@@ -44,5 +54,7 @@
             </tr>
             @endforeach
     </table>
+
+
     </div>
     @endsection
