@@ -43,6 +43,7 @@ class Categorie_IngredientController extends Controller
     }
     function importCsv(CsvRequest $request)
     {
-        echo 'mety';
+        $file = public_path($request->input('import'));
+        echo $file;
     }
 }

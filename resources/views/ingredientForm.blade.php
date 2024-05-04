@@ -52,7 +52,7 @@
                                             <p>ou</p>
                     </div>
                 </form>
-                <form action="{{route('import')}}" method="post">
+                <form action="{{route('import')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <center>
                     <label for="file" class="labelFile"
@@ -96,8 +96,8 @@
                         </g></svg
                     ></span>
                     <p id="fileLabel">Cliquez pour sélectionner un fichier CSV!</p>
-                  <input class="input" name="text" id="file" type="file" name="import" accept=".csv" required/>
-                  <button class="btn btn-success">Impoter</button>
+                  <input class="input"  id="file" type="file" name="import" accept=".csv"/>
+                  <button class="btn btn-success" type="submit">Impoter</button>
                 </center>
                 </form>
             </div>
