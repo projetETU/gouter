@@ -43,7 +43,24 @@ class Categorie_IngredientController extends Controller
     }
     function importCsv(CsvRequest $request)
     {
-        $file = public_path($request->input('import'));
-        echo $file;
+        $models =  new  Categorie();
+        if ($request->hasFile('import')) {
+            $path = $request->file('import')->getRealPath();
+            $file = fopen($path, 'r');
+
+            $headers = fgetcsv($file);
+
+
+            $data = [];
+                while (($row = fgetcsv($file)) !== false) {
+                    $rowdata = array_combine($headers,$row);
+                    $data = $rowdata;
+                }
+            $models->insert($data);
+            fclose($file);
+            return $data;
+        } else {
+            return 'Aucun fichier sélectionné.';
+        }
     }
 }
