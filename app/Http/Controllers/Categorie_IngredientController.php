@@ -7,6 +7,8 @@ use App\Models\Ingredient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Schema;
 use League\Csv\Writer;
+use Illuminate\Support\Str;
+use Validator;
 
 class Categorie_IngredientController extends Controller
 {
@@ -46,17 +48,19 @@ class Categorie_IngredientController extends Controller
 
             $request->validate( [
                 'import' => 'required|file|csv',
-                1 => 'integer'
-
             ]);
             $path = $request->file('import')->getRealPath();
             $file = fopen($path, 'r');
             $headers = fgetcsv($file);
-
+            // $headers = array_map('ucfirst',$headers);
             try {
                 while (($row = fgetcsv($file)) !== false) {
                     $rowdata = array_combine($headers, $row);
+                    Validator::make($rowdata,[
+                        $headers[0] => "required|regex:/^[a-zA-Z]+$/",
+                    ])->validate();
                     Categorie::insert($rowdata);
+
                 }
                 $ingredient = DB::select("SELECT ingredients.nom,ingredients.prix,ingredients.calories_100g,categories.categorie FROM ingredients
                 JOIN categories ON  ingredients.categorie = categories.id ");

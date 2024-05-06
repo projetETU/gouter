@@ -15,9 +15,7 @@
                         <div class="col-6">
                             <div class="input-group">
                                 <label class="label">Categorie name</label>
-                                @error('categorie')
-                                <p class="label" style="color: red;font-size: 12px">{{$message}}</p>
-                                @enderror
+                               
                                 <input class="input--style-4 col-12" type="text" name="categorie">
                             </div>
                         </div>
@@ -27,9 +25,7 @@
                     </div>
                 </form>
                 <p>OU</p>
-                @error('import')
-                                <p class="label" style="color: red;font-size: 12px">{{$message}}</p>
-                                @enderror
+
                 <form action="{{route('import')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <center>
