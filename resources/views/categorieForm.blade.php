@@ -27,7 +27,10 @@
                     </div>
                 </form>
                 <p>OU</p>
-                <form action="{{route('import')}}" method="post" enctype="multipart/form-data">
+                @error('import')
+                                <p class="label" style="color: red;font-size: 12px">{{$message}}</p>
+                                @enderror
+                <form action="{{route('import')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <center>
                     <label for="file" class="labelFile"

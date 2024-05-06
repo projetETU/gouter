@@ -12,7 +12,5 @@ class PlatController extends Controller
        $plats =   V_plat::all();
        return view('Recette',['plats'=>$plats]);
     }
-    // function makePlate()  {
-    //     Plat::insert($plats);
-    // }
+
 }

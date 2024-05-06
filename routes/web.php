@@ -28,4 +28,4 @@ Route::post('ingredientPost',[FormController::class,'ingredientPost'])->name('in
 Route::get('listRecette',[PlatController::class,'getPlat'])->name('listRecette');
 
 Route::post('csvExport',[Categorie_IngredientController::class,'exportCsv'])->name('export');
-Route::post('csvImport',[Categorie_IngredientController::class,'ImportCsv'])->name('import');
+Route::post('csvImport',[Categorie_IngredientController::class,'importCsv'])->name('import');

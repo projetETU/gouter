@@ -41,26 +41,35 @@ class Categorie_IngredientController extends Controller
 
         $csv->output( $fileName[1].'.csv');
     }
-    function importCsv(CsvRequest $request)
+    function importCsv(Request $request)
     {
-        $models =  new  Categorie();
-        if ($request->hasFile('import')) {
+
+            $request->validate( [
+                'import' => 'required|file|csv',
+                1 => 'integer'
+
+            ]);
             $path = $request->file('import')->getRealPath();
             $file = fopen($path, 'r');
-
             $headers = fgetcsv($file);
 
-
-            $data = [];
+            try {
                 while (($row = fgetcsv($file)) !== false) {
-                    $rowdata = array_combine($headers,$row);
-                    $data = $rowdata;
+                    $rowdata = array_combine($headers, $row);
+                    Categorie::insert($rowdata);
                 }
-            $models->insert($data);
-            fclose($file);
-            return $data;
-        } else {
-            return 'Aucun fichier sélectionné.';
+                $ingredient = DB::select("SELECT ingredients.nom,ingredients.prix,ingredients.calories_100g,categories.categorie FROM ingredients
+                JOIN categories ON  ingredients.categorie = categories.id ");
+                $categorie = Categorie::all();
+
+                return view('Index',[
+                    'categorie'=>$categorie,
+                    'ingredient'=>$ingredient
+                ]);
+                    } catch (\Throwable $th) {
+                return $th->getMessage();
+            }
         }
-    }
 }
+
+
